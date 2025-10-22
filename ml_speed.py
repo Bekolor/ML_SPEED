@@ -1,20 +1,3 @@
-"""
-SPEED SPI Aviation Safety Root Cause Analyzer - Enhanced Version
-================================================================
-
-A production-ready pipeline for analyzing aviation safety incidents using LM Studio.
-
-Features:
-- Parallel processing with configurable workers
-- Comprehensive checkpoint/resume capability
-- Robust JSON parsing with fallbacks
-- Metrics and analytics tracking
-- Validation at each pipeline stage
-- Confidence scoring
-- Dry-run mode for testing
-- Enhanced error handling and logging
-"""
-
 import os
 import re
 import json
@@ -47,7 +30,7 @@ class PipelineConfig:
     output_dir: str = "outputs"
     
     # LM Studio
-    endpoint: str = "https://gpt-oss-20b-vllm.apps.mlopsnonprod01.thy.com"
+    endpoint: str = "http://localhost:1234/v1/chat/completions"
     model: str = "lmstudio-local"
     reasoning_effort: str = "none"  # one of: none, low, medium, high
     
@@ -1668,7 +1651,7 @@ Examples:
     # LM Studio
     parser.add_argument(
         "--endpoint",
-        default="https://gpt-oss-20b-vllm.apps.mlopsnonprod01.thy.com",
+        default="http://localhost:1234/v1/chat/completions",
         help="LM Studio endpoint URL"
     )
     parser.add_argument(
