@@ -47,7 +47,7 @@ class PipelineConfig:
     output_dir: str = "outputs"
     
     # LM Studio
-    endpoint: str = "http://localhost:1234/v1/chat/completions"
+    endpoint: str = "https://gpt-oss-20b-vllm.apps.mlopsnonprod01.thy.com"
     model: str = "lmstudio-local"
     reasoning_effort: str = "none"  # one of: none, low, medium, high
     
@@ -1668,7 +1668,7 @@ Examples:
     # LM Studio
     parser.add_argument(
         "--endpoint",
-        default="http://localhost:1234/v1/chat/completions",
+        default="https://gpt-oss-20b-vllm.apps.mlopsnonprod01.thy.com",
         help="LM Studio endpoint URL"
     )
     parser.add_argument(
